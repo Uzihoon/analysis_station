@@ -2,7 +2,7 @@ const xslx = require("xlsx");
 const fs = require("fs");
 const _ = require("lodash");
 
-const month = 5;
+const month = 4;
 const SAT = "SAT";
 const SUN = "SUN";
 const MON = "MON";
@@ -27,9 +27,20 @@ const WEEK_LIST = {
   8: WEN_LIST,
   7: SUN_LIST,
   6: FRI_LIST,
-  5: THU_LIST
+  5: THU_LIST,
+  4: SUN_LIST
 };
-const MAX = { 12: 31, 11: 30, 10: 31, 9: 30, 8: 31, 7: 31, 6: 30, 5: 31 };
+const MAX = {
+  12: 31,
+  11: 30,
+  10: 31,
+  9: 30,
+  8: 31,
+  7: 31,
+  6: 30,
+  5: 31,
+  4: 30
+};
 
 const exceptList = {
   12: [25],
@@ -39,7 +50,8 @@ const exceptList = {
   8: [15],
   7: [],
   6: [6, 13],
-  5: [7, 22]
+  5: [7, 22],
+  4: []
 };
 const targetDate = [];
 WEEK_LIST[month].map((l, i) => {
