@@ -26,13 +26,14 @@ const WEEK_LIST = {
   9: SAT_LIST,
   8: WEN_LIST
 };
-const MAX = { 12: 31, 11: 30, 10: 31, 9: 30 };
+const MAX = { 12: 31, 11: 30, 10: 31, 9: 30, 8: 31 };
 
 const exceptList = {
   12: [25],
   11: [],
   10: [3, 9],
-  9: [24, 25, 26]
+  9: [24, 25, 26],
+  8: [15]
 };
 const targetDate = [];
 WEEK_LIST[month].map((l, i) => {
