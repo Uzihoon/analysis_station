@@ -3,13 +3,28 @@ const fs = require("fs");
 const _ = require("lodash");
 
 const month = 8;
+const SAT = "SAT";
+const SUN = "SUN";
+const MON = "MON";
+const TUE = "TUE";
+const WEN = "WEN";
+const THU = "THU";
+const FRI = "FRI";
 
-const ccc = {
-  12: ["SAT", "SUN", "MON", "TUE", "WEN", "THU", "FRI"],
-  11: ["THU", "FRI", "SAT", "SUN", "MON", "TUE", "WEN"],
-  10: ["MON", "TUE", "WEN", "THU", "FRI", "SAT", "SUN"],
-  9: ["SAT", "SUN", "MON", "TUE", "WEN", "THU", "FRI"],
-  8: ["WEN", "FRI"]
+const SAT_LIST = [SAT, SUN, MON, TUE, WEN, THU, FRI];
+const SUN_LIST = [SUN, MON, TUE, WEN, THU, FRI, SAT];
+const MON_LIST = [MON, TUE, WEN, THU, FRI, SAT, SUN];
+const TUE_LIST = [TUE, WEN, THU, FRI, SAT, SUN, MON];
+const WEN_LIST = [WEN, THU, FRI, SAT, SUN, MON, TUE];
+const THU_LIST = [THU, FRI, SAT, SUN, MON, TUE, WEN];
+const FRI_LIST = [FRI, SAT, SUN, MON, TUE, WEN, THU];
+
+const WEEK_LIST = {
+  12: SAT_LIST,
+  11: THU_LIST,
+  10: MON_LIST,
+  9: SAT_LIST,
+  8: WEN_LIST
 };
 const MAX = { 12: 31, 11: 30, 10: 31, 9: 30 };
 
@@ -20,7 +35,7 @@ const exceptList = {
   9: [24, 25, 26]
 };
 const targetDate = [];
-const vv = ccc[month].map((l, i) => {
+WEEK_LIST[month].map((l, i) => {
   const start = i + 1;
   const a = [];
   for (let i = 0; i < 5; i++) {
