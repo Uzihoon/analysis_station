@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "lodash": "^4.17.15",
-    "xlsx": "^0.15.6"
+    "xlsx": "^0.17.0"
   }
 }
